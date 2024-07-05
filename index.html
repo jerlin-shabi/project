@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="title">Book Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="drawer-icon" onclick="toggleDrawer()">☰</div>
+            <div class="logo">JS Book Store</div>
+        </div>
+        <div class="drawer">
+            <a href="student_form.html" class="drawer-item">Semester 1</a>
+            <div class="drawer-item">Semester 2</div>
+            <div class="drawer-item">Semester 3</div>
+            <div class="drawer-item">Semester 4</div>
+            <div class="drawer-item">Semester 5</div>
+            <div class="drawer-item">Semester 6</div>
+            <div class="drawer-item">Semester 7</div>
+            <div class="drawer-item">Semester 8</div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <!-- Search Bar -->
+        <div id="search-bar">
+            <label for="search">Search:</label>
+            <input type="text" id="search" oninput="filterBooks()" placeholder="Enter book title">
+        </div>
+
+        <div id="book-list">
+            <!-- Display the list of books here -->
+            <!-- Each book should have an image, description, rate, and a button to initiate the order process -->
+
+            <!-- Book 1 -->
+            <div class="book-entry" data-id="1">
+                <img src="https://th.bing.com/th/id/OIP.h375ZjjMwjbRvJLpdmOZQAHaLO?w=194&h=293&c=7&r=0&o=5&pid=1.7" alt="Data Structures">
+                <h3>Data Structures</h3>
+                <p>Rate: Rs:300</p>
+                <button onclick="redirectToOrder()">Order</button>
+            </div>
+            <!-- Book 2 -->
+            <div class="book-entry" data-id="2">
+                <img src="https://th.bing.com/th?id=OIP.m52tVjy0uy8k_9pyR94MmAHaJt&w=218&h=286&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="Foundation of Data Science">
+                <h3>Foundation of Data Science</h3>
+                <p>Rate: Rs:300</p>
+                <button onclick="redirectToOrder()">Order</button>
+            </div>
+            <!-- Book 3 -->
+            <div class="book-entry" data-id="3">
+                <img src="https://th.bing.com/th/id/OIP.BQ_Si0OOhBiCCO_BXO-ShgHaKH?w=202&h=277&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Digital Principle and Computer Orientation">
+                <h3>Digital Principle and Computer Orientation</h3>
+                <p>Rate: Rs:300</p>
+                <button onclick="redirectToOrder()">Order</button>
+            </div>
+            <!-- Book 4 -->
+            <div class="book-entry" data-id="4">
+                <img src="https://th.bing.com/th/id/OIP.6trJqaM-ri0yzQXHDbhl_QAAAA?w=118&h=180&c=7&r=0&o=5&pid=1.7" alt="Object Oriented Programming Language">
+                <h3>Object Oriented Programming Language</h3>
+                <p>Rate: Rs:250</p>
+                <button onclick="redirectToOrder()">Order</button>
+            </div>
+            <!-- Book 5 -->
+            <div class="book-entry" data-id="5">
+                <img src="https://th.bing.com/th/id/OIP.jL8Blqu2MyN8LmCvPV5CBwAAAA?w=194&h=281&c=7&r=0&o=5&pid=1.7" alt="Discrete Mathematics">
+                <h3>Discrete Mathematics</h3>
+                <p>Rate: Rs:300</p>
+                <button onclick="redirectToOrder()">Order</button>
+            </div>
+            <!-- Book 6 -->
+            <div class="book-entry" data-id="6">
+                <img src="https://th.bing.com/th/id/OIP.q31nEFygrACH_fdAlIfzBQHaHa?w=194&h=194&c=7&r=0&o=5&pid=1.7" alt="Lab Manual">
+                <h3>Lab Manual</h3>
+                <p>Rate: Rs:250</p>
+                <button onclick="redirectToOrder()">Order</button>
+            </div>
+            <!-- Add more books as needed -->
+
+        </div>
+
+        <div id="order-form" style="display: none;">
+            <h2>Order Details</h2>
+            <form id="order-details-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" required><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" required><br>
+
+                <label for="payment-method">Payment Method:</label>
+                <select id="payment-method" required>
+                    <option value="cash-on-delivery">Cash on Delivery</option>
+                    <option value="paytm">Paytm</option>
+                </select><br>
+
+                <button type="button" onclick="placeOrder()">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function toggleDrawer() {
+            const drawer = document.querySelector('.drawer');
+            drawer.style.display = drawer.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function filterBooks() {
+            const searchInput = document.getElementById('search').value.toLowerCase();
+            const books = document.querySelectorAll('.book-entry');
+            books.forEach(book => {
+                const title = book.querySelector('h3').innerText.toLowerCase();
+                book.style.display = title.includes(searchInput) ? '' : 'none';
+            });
+        }
+
+        function redirectToOrder() {
+            window.location.href = 'student_form.html';
+        }
+    </script>
+</body>
+</html>

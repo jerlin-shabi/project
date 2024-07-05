@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Students</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Student Details</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Department</th>
+            <th>Academic Year</th>
+            <th>Payment Method</th>
+        </tr>
+        {% for row in rows %}
+        <tr>
+            <td>{{ row['name'] }}</td>
+            <td>{{ row['phone'] }}</td>
+            <td>{{ row['department'] }}</td>
+            <td>{{ row['academic_year'] }}</td>
+            <td>{{ row['payment_method'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="/">Go back to the form</a>
+</body>
+</html>

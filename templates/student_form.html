@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Details Form</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Student Details Form</h1>
+    <form id="studentForm" action="/submit" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter Your Name" name="name" required><br>
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" placeholder="Enter your phone number" name="phone" pattern="[0-9]{10}" required><br>
+
+        <label for="department">Department:</label>
+        <select id="department" name="department" required>
+            <option value="CSE">CSE</option>
+            <option value="civil">CIVIL</option>
+            <option value="EEE">EEE</option>
+            <option value="ECE">ECE</option>
+            <option value="MECH">MECH</option>
+            <option value="AI">AI</option>
+        </select><br>
+
+        <label for="academicYear">Academic Year:</label>
+        <input type="number" id="academicYear" placeholder="Enter a number between 1 to 4" name="academicYear" min="1" max="4" required><br>
+
+        <label for="Payment Method">Payment Method:</label>
+        <select id="Payment Method" name="Payment Method" required>
+            <option value="Cash on Delivery">Cash on Delivery</option>
+            <option value="Gpay">Gpay</option>
+            <option value="paytm">paytm</option>
+        </select><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

@@ -1,12 +1,11 @@
 
 
 header {
-    background-color: #333;
+    background-color: #0aaa5a;
     color: white;
     padding: 10px;
-   
+    height:80px;
     display: flex;
-    
     align-items: center;
     
 }
@@ -26,7 +25,7 @@ header {
 }
 
 .drawer-icon {
-    font-size: 60px;
+    font-size: 30px;
     cursor: pointer;
     justify-content:flex-start;
     
